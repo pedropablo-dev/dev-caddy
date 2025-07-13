@@ -50,7 +50,7 @@ Dev-Caddy soporta múltiples tipos de "items" para adaptarse a cualquier necesid
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone [https://github.com/pedropablo-dev/dev-caddy.git](https://github.com/pedropablo-dev/dev-caddy.git)
+    git clone https://github.com/pedropablo-dev/dev-caddy.git
     cd dev-caddy
     ```
 
