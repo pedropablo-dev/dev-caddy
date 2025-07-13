@@ -1,0 +1,190 @@
+{
+  "categories": [
+    {
+      "id": "git-essentials",
+      "name": "Git Essentials",
+      "icon": "😺",
+      "order": 0
+    },
+    {
+      "id": "docker-commands",
+      "name": "Docker",
+      "icon": "🐳",
+      "order": 1
+    },
+    {
+      "id": "project-urls",
+      "name": "Project URLs",
+      "icon": "🔗",
+      "order": 2
+    },
+    {
+      "id": "ai-prompts",
+      "name": "AI Prompts",
+      "icon": "✨",
+      "order": 3
+    },
+    {
+      "id": "ssh-connections",
+      "name": "SSH Connections",
+      "icon": "🐧",
+      "order": 4
+    }
+  ],
+  "commands": {
+    "git-essentials": [
+      {
+        "id": "git-workflow-1",
+        "label": "Secuencia de Guardado Completa",
+        "command": "workflow",
+        "type": "workflow",
+        "steps": [
+          "git status",
+          "git add .",
+          "git commit -m \"Escribe tu mensaje aquí\"",
+          "git push origin main"
+        ],
+        "order": 0,
+        "isFavorite": true
+      },
+      {
+        "id": "git-variables-1",
+        "label": "Crear y Cambiar a Nueva Rama",
+        "command": "git checkout -b {branch-name}",
+        "type": "command",
+        "variables": [
+          {
+            "name": "branch-name",
+            "placeholder": "Ej: feature/nueva-funcionalidad"
+          }
+        ],
+        "order": 1,
+        "isFavorite": false
+      },
+      {
+        "id": "git-simple-1",
+        "label": "Ver Historial de Commits (Bonito)",
+        "command": "git log --graph --oneline --decorate",
+        "type": "command",
+        "order": 2,
+        "isFavorite": true
+      },
+      {
+        "id": "git-simple-2",
+        "label": "Deshacer Último Commit (Local)",
+        "command": "git reset --soft HEAD~1",
+        "type": "command",
+        "order": 3
+      }
+    ],
+    "docker-commands": [
+      {
+        "id": "docker-simple-1",
+        "label": "Listar Contenedores en Ejecución",
+        "command": "docker ps",
+        "type": "command",
+        "order": 0,
+        "isFavorite": false
+      },
+      {
+        "id": "docker-simple-2",
+        "label": "Listar Todos los Contenedores",
+        "command": "docker ps -a",
+        "type": "command",
+        "order": 1
+      },
+      {
+        "id": "docker-simple-3",
+        "label": "Eliminar Todos los Contenedores Detenidos",
+        "command": "docker container prune -f",
+        "type": "command",
+        "order": 2,
+        "isFavorite": true
+      },
+      {
+        "id": "docker-variables-1",
+        "label": "Ver Logs de un Contenedor",
+        "command": "docker logs -f {container_name}",
+        "type": "command",
+        "variables": [
+          {
+            "name": "container_name",
+            "placeholder": "Nombre o ID del contenedor"
+          }
+        ],
+        "order": 3
+      }
+    ],
+    "project-urls": [
+      {
+        "id": "url-simple-1",
+        "label": "Local - App Principal",
+        "command": "http://localhost:3000",
+        "type": "command",
+        "order": 0
+      },
+      {
+        "id": "url-simple-2",
+        "label": "Local - Panel de Admin",
+        "command": "http://localhost:3000/admin",
+        "type": "command",
+        "order": 1
+      },
+      {
+        "id": "url-simple-3",
+        "label": "Staging - Despliegue de Pruebas",
+        "command": "https://staging.tu-app.com",
+        "type": "command",
+        "order": 2
+      }
+    ],
+    "ai-prompts": [
+      {
+        "id": "prompt-1",
+        "label": "Generar Código de Componente React",
+        "command": "Crea un componente de React funcional utilizando TypeScript y Tailwind CSS llamado `{ComponentName}`.\n\n**Requisitos:**\n- El componente debe aceptar una prop `title` (string) y una prop `items` (array de strings).\n- Debe renderizar un título `<h2>` con el valor de `title`.\n- Debe renderizar una lista no ordenada (`<ul>`) con los `items`.\n- El componente debe estar contenido en una tarjeta (`<div>`) con sombra y bordes redondeados.\n\n**Ejemplo de uso:**\n```jsx\n<ComponentName title=\"Mi Lista\" items={['Item 1', 'Item 2']} />\n```",
+        "type": "prompt",
+        "order": 0,
+        "isFavorite": true,
+        "variables": [
+          "{ComponentName}"
+        ]
+      },
+      {
+        "id": "prompt-2",
+        "label": "Explicar Fragmento de Código",
+        "command": "Actúa como un programador senior. Explica el siguiente fragmento de código de `{Language}` de forma clara y concisa. Céntrate en el porqué de su diseño y en las posibles mejoras.\n\n```\n{CodeSnippet}\n```",
+        "type": "prompt",
+        "order": 1,
+        "isFavorite": false,
+        "variables": [
+          "{Language}",
+          "{CodeSnippet}"
+        ]
+      }
+    ],
+    "ssh-connections": [
+      {
+        "id": "ssh-variables-1",
+        "label": "Conectar a Servidor",
+        "command": "ssh {user}@{host} -p {port}",
+        "type": "command",
+        "variables": [
+          {
+            "name": "user",
+            "placeholder": "ej: root"
+          },
+          {
+            "name": "host",
+            "placeholder": "ej: 192.168.1.100"
+          },
+          {
+            "name": "port",
+            "placeholder": "ej: 22"
+          }
+        ],
+        "order": 0
+      }
+    ]
+  }
+}
